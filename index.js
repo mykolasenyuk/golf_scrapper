@@ -51,8 +51,6 @@ async function main() {
 
   while (hasNextPage) {
     const data = await request(endpoint, query(after));
-    console.log(data.clubs.pageInfo.hasNextPage);
-    console.log(data.clubs.pageInfo.endCursor);
     hasNextPage = false;
     allData.push(...data.clubs.edges);
     hasNextPage = data.clubs.pageInfo.hasNextPage;
