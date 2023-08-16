@@ -34,10 +34,30 @@ const query = (after) => `query Clubs {
                 }
                 logo {
                     alt
+                    sq_bg
+                    small
+                    sq_bg_2x
+                    sq_me_2x
+                    sq_me
+                    sq_sm_2x
+                    sq_sm
+                    full
+                    large
+                    medium
                     original
                 }
                 cover {
+                    sq_bg
+                    full
+                    small
+                    medium
                     original
+                    sq_sm
+                    sq_sm_2x
+                    sq_me
+                    sq_me_2x
+                    sq_bg_2x
+                    alt
                 }
             }
         }
@@ -56,8 +76,8 @@ async function main() {
     hasNextPage = data.clubs.pageInfo.hasNextPage;
     after = data.clubs.pageInfo.endCursor;
   }
-
-  fs.writeFileSync("data.json", JSON.stringify(allData));
+  console.log(allData);
+  fs.writeFileSync("dataVsPictures.json", JSON.stringify(allData));
 }
 
 main();
