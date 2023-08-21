@@ -77,7 +77,7 @@ async function main() {
     after = data.clubs.pageInfo.endCursor;
   }
   console.log(allData);
-  fs.writeFileSync("dataVsPictures.json", JSON.stringify(allData));
+  fs.writeFileSync("data.json", JSON.stringify(allData));
 }
 
 main();
